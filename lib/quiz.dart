@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/default_screen.dart';
+import 'package:quiz_app/start_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -12,9 +12,21 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   @override
   Widget build(context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: DefaultScreen(),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 71, 0, 145),
+                Color.fromARGB(255, 98, 0, 163),
+              ],
+            ),
+          ),
+          child: const StartScreen(),
+        ),
       ),
     );
   }
