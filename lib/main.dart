@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/default_screen.dart';
+import 'package:quiz_app/quiz.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Scaffold(
-        body: DefaultScreen(),
-      ),
-    ),
-  );
+  runApp(const Quiz());
 }

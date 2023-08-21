@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/default_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -11,6 +12,10 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   @override
   Widget build(context) {
-    return;
+    return const MaterialApp(
+      home: Scaffold(
+        body: DefaultScreen(),
+      ),
+    );
   }
 }
