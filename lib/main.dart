@@ -15,10 +15,11 @@ void main() {
               ],
             ),
           ),
-          child: const Center(
+          child: Center(
             child: Column(
               children: [
-                Text('Learn Flutter the FUN Way!'),
+                Image.asset('assets/images/quiz-logo.png'),
+                const Text('Learn Flutter the FUN Way!'),
               ],
             ),
           ),
