@@ -15,6 +15,22 @@ class QuestionsSummary extends StatelessWidget {
     return indexColor;
   }
 
+  Icon iconColor(data) {
+    Icon iconColor = const Icon(
+      Icons.check_box_rounded,
+      size: 17,
+      color: Colors.green,
+    );
+    if (data['user_answer'] != data['correct_answer']) {
+      iconColor = const Icon(
+        Icons.cancel,
+        size: 17,
+        color: Color.fromARGB(255, 239, 102, 102),
+      );
+    }
+    return iconColor;
+  }
+
   final List<Map<String, Object>> summaryData;
 
   @override
@@ -58,12 +74,28 @@ class QuestionsSummary extends StatelessWidget {
                         const SizedBox(
                           height: 5,
                         ),
-                        Text(
-                          data['user_answer'] as String,
-                          style: GoogleFonts.lato(
-                            color: wrongAnsColor(data),
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
+                        RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: data['user_answer'] as String,
+                                style: GoogleFonts.lato(
+                                  color: wrongAnsColor(data),
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              WidgetSpan(
+                                child: Column(
+                                  children: [
+                                    const SizedBox(
+                                      width: 25,
+                                    ),
+                                    iconColor(data),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                         ),
                         Text(

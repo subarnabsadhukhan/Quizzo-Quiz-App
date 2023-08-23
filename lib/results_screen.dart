@@ -44,7 +44,7 @@ class ResultsScreen extends StatelessWidget {
       width: double.infinity,
       child: Container(
         margin: const EdgeInsets.all(
-          40,
+          30,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
