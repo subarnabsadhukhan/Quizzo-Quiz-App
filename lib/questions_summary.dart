@@ -8,9 +8,9 @@ class QuestionsSummary extends StatelessWidget {
   });
 
   Color wrongAnsColor(data) {
-    Color indexColor = const Color.fromARGB(255, 219, 33, 243);
+    Color indexColor = const Color.fromARGB(255, 123, 152, 255);
     if (data['user_answer'] != data['correct_answer']) {
-      indexColor = const Color.fromARGB(255, 123, 152, 255);
+      indexColor = const Color.fromARGB(255, 219, 33, 243);
     }
     return indexColor;
   }
@@ -26,6 +26,7 @@ class QuestionsSummary extends StatelessWidget {
           children: summaryData.map(
             (data) {
               return Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     margin: const EdgeInsetsDirectional.only(
@@ -60,7 +61,7 @@ class QuestionsSummary extends StatelessWidget {
                         Text(
                           data['user_answer'] as String,
                           style: GoogleFonts.lato(
-                            color: const Color.fromARGB(255, 216, 123, 255),
+                            color: wrongAnsColor(data),
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
