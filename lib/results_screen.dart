@@ -5,11 +5,13 @@ import 'package:quiz_app/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
+    required this.goToStartScreen,
     super.key,
     required this.chosenAnswers,
   });
 
   final List<String> chosenAnswers;
+  final Function() goToStartScreen;
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -70,7 +72,7 @@ class ResultsScreen extends StatelessWidget {
                 Icons.refresh_sharp,
                 color: Color.fromARGB(255, 207, 141, 251),
               ),
-              onPressed: () {},
+              onPressed: goToStartScreen,
               label: Text(
                 'Restart Quiz!',
                 style: GoogleFonts.lato(
