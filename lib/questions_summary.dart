@@ -7,12 +7,20 @@ class QuestionsSummary extends StatelessWidget {
     super.key,
   });
 
+  Color wrongAnsColor(data) {
+    Color indexColor = const Color.fromARGB(255, 219, 33, 243);
+    if (data['user_answer'] != data['correct_answer']) {
+      indexColor = const Color.fromARGB(255, 123, 152, 255);
+    }
+    return indexColor;
+  }
+
   final List<Map<String, Object>> summaryData;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 450,
       child: SingleChildScrollView(
         child: Column(
           children: summaryData.map(
@@ -26,8 +34,8 @@ class QuestionsSummary extends StatelessWidget {
                     alignment: Alignment.center,
                     width: 30.0,
                     height: 30.0,
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 219, 33, 243),
+                    decoration: BoxDecoration(
+                      color: wrongAnsColor(data),
                       shape: BoxShape.circle,
                     ),
                     child: Text(
