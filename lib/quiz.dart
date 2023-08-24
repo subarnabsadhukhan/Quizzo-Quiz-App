@@ -58,6 +58,7 @@ class _QuizState extends State<Quiz> {
     }
 
     return MaterialApp(
+      title: 'Quiz',
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
